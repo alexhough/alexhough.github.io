@@ -3,10 +3,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="generator" content="TiddlyWiki" />
-<meta name="tiddlywiki-version" content="5.1.13" />
+<meta name="tiddlywiki-version" content="5.1.15-prerelease" />
 <meta name="format-detection" content="telephone=no">
 <link id="faviconLink" rel="shortcut icon" href="favicon.ico">
-<title>Organisational Maturity  — a non-linear personal sketchy web notebook</title>
+<title>PickleJournal — AlexHough @100CreweRoad</title>
 <div id="styleArea">
 <style data-tiddler-title="$:/boot/boot.css" data-tiddler-type="text/css" type="text/css">/*
 Basic styles used before we boot up the parsing engine
@@ -70,6 +70,147 @@ Error message and password prompt
 </style>
 </div>
 <style type="text/css">
+
+/* Left will inherit from right (so we don't need to duplicate code */
+.github-fork-ribbon {
+  /* The right and left lasses determine the side we attach our banner to */
+  position: absolute;/* Add a bit of padding to give some substance outside the "stitching" */
+  padding: 2px 0;/* Set the base colour */
+  background-color: #a00;/* Set a gradient: transparent black at the top to almost-transparent black at the bottom */
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.00)), to(rgba(0, 0, 0, 0.15)));
+  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.00), rgba(0, 0, 0, 0.15));
+  background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.00), rgba(0, 0, 0, 0.15));
+  background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.00), rgba(0, 0, 0, 0.15));
+  background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.00), rgba(0, 0, 0, 0.15));
+  background-image: linear-gradient(top, rgba(0, 0, 0, 0.00), rgba(0, 0, 0, 0.15));
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#000000', EndColorStr='#000000');/* Add a drop shadow */
+  -webkit-box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.5);z-index: 999;
+  pointer-events: auto;
+}.github-fork-ribbon a, .github-fork-ribbon a.tc-tiddlylink,
+.github-fork-ribbon a:hover, .github-fork-ribbon a.tc-tiddlylink:hover  {
+  /* Set the font */
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: white;/* Set the text properties */
+  text-decoration: none;
+  text-shadow: 0 -1px rgba(0,0,0,0.5);
+  text-align: center;/* Set the geometry. If you fiddle with these you'll also need to tweak the top and right values in #github-fork-ribbon. */
+  width: 200px;
+  line-height: 20px;/* Set the layout properties */
+  display: inline-block;
+  padding: 2px 0;/* Add "stitching" effect */
+  border-width: 1px 0;
+  border-style: dotted;
+  border-color: rgba(255,255,255,0.7);
+}.github-fork-ribbon-wrapper {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  z-index: 999;
+  pointer-events: none;
+}.github-fork-ribbon-wrapper.fixed {
+  position: fixed;
+}.github-fork-ribbon-wrapper.left {
+  left: 0;
+}.github-fork-ribbon-wrapper.right {
+  right: 0;
+}.github-fork-ribbon-wrapper.left-bottom {
+  position: fixed;
+  top: inherit;
+  bottom: 0;
+  left: 0;
+}.github-fork-ribbon-wrapper.right-bottom {
+  position: fixed;
+  top: inherit;
+  bottom: 0;
+  right: 0;
+}.github-fork-ribbon-wrapper.right .github-fork-ribbon {
+  top: 42px;
+  right: -43px;/* Rotate the banner 45 degrees */
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}.github-fork-ribbon-wrapper.left .github-fork-ribbon {
+  top: 42px;
+  left: -43px;/* Rotate the banner -45 degrees */
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}.github-fork-ribbon-wrapper.left-bottom .github-fork-ribbon {
+  top: 80px;
+  left: -43px;/* Rotate the banner -45 degrees */
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}.github-fork-ribbon-wrapper.right-bottom .github-fork-ribbon {
+  top: 80px;
+  right: -43px;/* Rotate the banner -45 degrees */
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+
+.tc-help-panel {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	width: 310px;
+	height: 400px;
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+	
+  -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+     -moz-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+
+	border: 1px solid #ffffff;
+	background: #ffffff;
+	padding: 1em;
+	margin: 0.5em;
+	z-index: 1000;
+}dl.tc-help-cheatsheet {
+	overflow: hidden;
+}dl.tc-help-cheatsheet .red {
+	color: red;
+}.tc-help-cheatsheet > dt {
+	display: block;
+	float: left;
+	clear: left;
+	margin: 2% 1em 0 0;
+	padding;
+	font-weight: normal;
+	width: 45%;
+}.tc-help-cheatsheet > dt > pre {
+	margin: 0;
+}.tc-help-cheatsheet > dd {
+	display: block;
+	float: left;
+	width: 45%;
+	margin: 1em 0 0 0;
+	padding: 0;
+}.tc-help-cheatsheet > dd > p,
+.tc-help-cheatsheet > dd > h1,
+.tc-help-cheatsheet > dd > pre,
+.tc-help-cheatsheet > dd > ul,
+.tc-help-cheatsheet > dd > ol,
+.tc-help-cheatsheet > dd > dl,
+.tc-help-cheatsheet > dd > table,
+.tc-help-cheatsheet > dd > blockquote,
+.tc-help-cheatsheet > dd > blockquote >p {
+	margin: 0;
+}.tc-help-cheatsheet .tc-image {
+	width: 16px;
+}
+
 
 /*
 
@@ -230,6 +371,54 @@ Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiac
 
 .hljs{display:block;overflow-x:auto;padding:.5em;color:#333;background:#f8f8f8;-webkit-text-size-adjust:none}.hljs-comment,.diff .hljs-header,.hljs-javadoc{color:#998;font-style:italic}.hljs-keyword,.css .rule .hljs-keyword,.hljs-winutils,.nginx .hljs-title,.hljs-subst,.hljs-request,.hljs-status{color:#333;font-weight:bold}.hljs-number,.hljs-hexcolor,.ruby .hljs-constant{color:teal}.hljs-string,.hljs-tag .hljs-value,.hljs-phpdoc,.hljs-dartdoc,.tex .hljs-formula{color:#d14}.hljs-title,.hljs-id,.scss .hljs-preprocessor{color:#900;font-weight:bold}.hljs-list .hljs-keyword,.hljs-subst{font-weight:normal}.hljs-class .hljs-title,.hljs-type,.vhdl .hljs-literal,.tex .hljs-command{color:#458;font-weight:bold}.hljs-tag,.hljs-tag .hljs-title,.hljs-rule .hljs-property,.django .hljs-tag .hljs-keyword{color:navy;font-weight:normal}.hljs-attribute,.hljs-variable,.lisp .hljs-body,.hljs-name{color:teal}.hljs-regexp{color:#009926}.hljs-symbol,.ruby .hljs-symbol .hljs-string,.lisp .hljs-keyword,.clojure .hljs-keyword,.scheme .hljs-keyword,.tex .hljs-special,.hljs-prompt{color:#990073}.hljs-built_in{color:#0086b3}.hljs-preprocessor,.hljs-pragma,.hljs-pi,.hljs-doctype,.hljs-shebang,.hljs-cdata{color:#999;font-weight:bold}.hljs-deletion{background:#fdd}.hljs-addition{background:#dfd}.diff .hljs-change{background:#0086b3}.hljs-chunk{color:#aaa}
 
+
+
+.tc-powered-by-tiddlywiki-banner {
+	position: fixed;
+	right: 1em;
+	bottom: 0;
+    z-index: 2000;
+}
+
+.tc-drop-down .tc-qrcode-drop-down img {
+	width: 100%;
+	height: 100%;
+}
+
+
+/* CSS modified for TiddlyWiki */
+svg.railroad-diagram {
+	background-color: hsl(30,20%,98%);
+	border-radius: 5px;
+}
+svg.railroad-diagram:hover {
+	background-color: hsl(30,20%,96%);
+}
+svg.railroad-diagram path,
+svg.railroad-diagram rect {
+	stroke-width: 2;
+	stroke: #333;
+}
+svg.railroad-diagram path {
+	fill: rgba(0,0,0,0);
+}
+svg.railroad-diagram rect {
+	fill: hsl(120,100%,90%);
+}
+svg.railroad-diagram text {
+	font: 14px monospace;
+	text-anchor: middle;
+}
+svg.railroad-diagram text.label {
+	text-anchor: start;
+}
+svg.railroad-diagram text.comment {
+	font: italic 12px monospace;
+}
+svg.railroad-diagram path.arrow {
+    stroke-width: 2;
+}
+
 .tc-sidebar-header {
 	text-shadow: 0 1px 0 rgba(255,255,255, 0.8);
 }.tc-tiddler-info {
@@ -346,7 +535,7 @@ background-image: -moz-linear-gradient(left, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.0
 background-image: -webkit-linear-gradient(left, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.0) 100%);
 background-image: -ms-linear-gradient(left, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.0) 100%);
 
-}.tc-more-sidebar .tc-tab-buttons button {
+}.tc-more-sidebar > .tc-tab-set > .tc-tab-buttons > button {
 	
 background-image: linear-gradient(left, rgba(0,0,0,0.01) 0%, rgba(0,0,0,0.1) 100%);
 background-image: -o-linear-gradient(left, rgba(0,0,0,0.01) 0%, rgba(0,0,0,0.1) 100%);
@@ -354,7 +543,7 @@ background-image: -moz-linear-gradient(left, rgba(0,0,0,0.01) 0%, rgba(0,0,0,0.1
 background-image: -webkit-linear-gradient(left, rgba(0,0,0,0.01) 0%, rgba(0,0,0,0.1) 100%);
 background-image: -ms-linear-gradient(left, rgba(0,0,0,0.01) 0%, rgba(0,0,0,0.1) 100%);
 
-}.tc-more-sidebar .tc-tab-buttons button.tc-tab-selected {
+}.tc-more-sidebar > .tc-tab-set > .tc-tab-buttons > button.tc-tab-selected {
 	
 background-image: linear-gradient(left, rgba(0,0,0,0.05) 0%, rgba(255,255,255,0.05) 100%);
 background-image: -o-linear-gradient(left, rgba(0,0,0,0.05) 0%, rgba(255,255,255,0.05) 100%);
@@ -823,13 +1012,13 @@ th {
 }body.tc-body {
 	font-size: 14px;
 	line-height: 20px;
-	color: #333333;
-	background-color: #f4f4f4;
-	fill: #333333;
 	word-wrap: break-word;
 	
 
 
+	color: #333333;
+	background-color: #f4f4f4;
+	fill: #333333;
 }h1, h2, h3, h4, h5, h6 {
 	line-height: 1.2;
 	font-weight: 300;
@@ -858,6 +1047,40 @@ th {
 	border-left: 5px solid #bbb;
 	margin-left: 25px;
 	padding-left: 10px;
+	quotes: "\201C""\201D""\2018""\2019";
+}blockquote.tc-big-quote {
+	font-family: Georgia, serif;
+	position: relative;
+	background: #f5f5f5;
+	border-left: none;
+	margin-left: 50px;
+	margin-right: 50px;
+	padding: 10px;
+    border-radius: 8px;
+}blockquote.tc-big-quote cite:before {
+	content: "\2014 \2009";
+}blockquote.tc-big-quote:before {
+	font-family: Georgia, serif;
+	color: #bbb;
+	content: open-quote;
+	font-size: 8em;
+	line-height: 0.1em;
+	margin-right: 0.25em;
+	vertical-align: -0.4em;
+	position: absolute;
+    left: -50px;
+    top: 42px;
+}blockquote.tc-big-quote:after {
+	font-family: Georgia, serif;
+	color: #bbb;
+	content: close-quote;
+	font-size: 8em;
+	line-height: 0.1em;
+	margin-right: 0.25em;
+	vertical-align: -0.4em;
+	position: absolute;
+    right: -80px;
+    bottom: -20px;
 }dl dt {
 	font-weight: bold;
 	margin-top: 6px;
@@ -872,6 +1095,9 @@ input:not([type]) {
 	color: #bbb;
 }svg.tc-image-button {
 	padding: 0px 1px 1px 0px;
+}.tc-icon-wrapper > svg {
+	width: 1em;
+	height: 1em;
 }kbd {
 	display: inline-block;
 	padding: 3px 5px;
@@ -959,6 +1185,8 @@ a.tc-tiddlylink:hover {
 	z-index: -10000;
 }.tc-tiddler-dragger-inner {
 	position: absolute;
+	top: -1000px;
+	left: -1000px;
 	display: inline-block;
 	padding: 8px 20px;
 	font-size: 16.9px;
@@ -985,6 +1213,13 @@ a.tc-tiddlylink:hover {
 	background: rgba(0,200,0,0.7);
 	text-align: center;
 	content: "Drop here (or use the 'Escape' key to cancel)";
+}.tc-droppable > .tc-droppable-placeholder {
+	display: none;
+}.tc-droppable.tc-dragover > .tc-droppable-placeholder {
+	display: block;
+	border: 2px dashed rgba(0,200,0,0.7);
+}.tc-draggable {
+	cursor: move;
 }/*
 ** Plugin reload warning
 */.tc-plugin-reload-warning {
@@ -1005,6 +1240,7 @@ a.tc-tiddlylink:hover {
 	margin: 0;
 	background: none;
 	border: none;
+    cursor: pointer;
 }.tc-btn-boxed {
 	font-size: 0.6em;
 	padding: 0.2em;
@@ -1133,7 +1369,7 @@ a.tc-tiddlylink:hover {
 	display: inline-block;
 	padding: 0.16em 0.7em;
 	font-size: 0.9em;
-	font-weight: 300;
+	font-weight: 400;
 	line-height: 1.2em;
 	color: #ffffff;
 	white-space: nowrap;
@@ -1153,6 +1389,7 @@ a.tc-tiddlylink:hover {
 	height: 1em;
 	width: 1em;
 	fill: #ffffff;
+	vertical-align: text-bottom;
 }.tc-tag-manager-table .tc-tag-label {
 	white-space: normal;
 }.tc-tag-manager-tag {
@@ -1232,6 +1469,9 @@ a.tc-tiddlylink:hover {
 		-webkit-overflow-scrolling: touch;
 		margin: 0 0 0 -42px;
 		padding: 71px 0 28px 42px;
+	}html[dir="rtl"] .tc-sidebar-scrollable {
+		left: auto;
+		right: 770px;
 	}.tc-story-river {
 		position: relative;
 		left: 0px;
@@ -1327,8 +1567,13 @@ a.tc-tiddlylink:hover {
 	margin-left:5px;
 }.tc-tiddler-controls button svg, .tc-tiddler-controls button img,
 .tc-search button svg, .tc-search a svg {
-	height: 0.75em;
 	fill: #cccccc;
+}.tc-tiddler-controls button svg, .tc-tiddler-controls button img {
+	height: 0.75em;
+}.tc-search button svg, .tc-search a svg {
+    height: 1.2em;
+    width: 1.2em;
+    margin: 0 0.25em;
 }.tc-tiddler-controls button.tc-selected svg,
 .tc-page-controls button.tc-selected svg  {
 	fill: #444444;
@@ -1352,6 +1597,7 @@ a.tc-tiddlylink:hover {
 .tc-tiddler-frame iframe.tc-edit-texteditor {
 	padding: 3px 3px 3px 3px;
 	border: 1px solid #cccccc;
+	background-color: #f8f8f8;
 	line-height: 1.3em;
 	-webkit-appearance: none;
 }.tc-tiddler-frame .tc-binary-warning {
@@ -1361,8 +1607,6 @@ a.tc-tiddlylink:hover {
 	padding: 3em 3em 6em 3em;
 	background: #ffe476;
 	border: 1px solid #b99e2f;
-}.tc-tiddler-frame input.tc-edit-texteditor {
-	background-color: #f8f8f8;
 }canvas.tc-edit-bitmapeditor  {
 	border: 6px solid #ffffff;
 	cursor: crosshair;
@@ -1426,7 +1670,24 @@ a.tc-tiddlylink:hover {
 	padding: 0;
 }/*
 ** Adjustments for fluid-fixed mode
-*/@media (min-width: 960px) {}/*
+*/@media (min-width: 960px) {.tc-story-river {
+		padding-right: 0;
+		position: relative;
+		width: auto;
+		left: 0;
+		margin-left: 0px;
+		margin-right: 450px;
+	}.tc-tiddler-frame {
+		width: 100%;
+	}.tc-sidebar-scrollable {
+		left: auto;
+		bottom: 0;
+		right: 0;
+		width: 450px;
+	}body.tc-body .tc-storyview-zoomin-tiddler {
+		width: 100%;
+		width: calc(100% - 42px);
+	}}/*
 ** Toolbar buttons
 */.tc-page-controls svg.tc-image-new-button {
   fill: ;
@@ -1460,6 +1721,8 @@ a.tc-tiddlylink:hover {
 	display: inline-block;
 }.tc-edit-add-tag .tc-add-tag-name input {
 	width: 50%;
+}.tc-edit-add-tag .tc-keyboard {
+	display:inline;
 }.tc-edit-tags .tc-tag-label {
 	display: inline-block;
 }.tc-edit-tags-list {
@@ -1472,7 +1735,7 @@ a.tc-tiddlylink:hover {
 	float: right;
 	width: 49%;
 	border: 1px solid #cccccc;
-	margin: 4px 3px 3px 3px;
+	margin: 4px 0 3px 3px;
 	padding: 3px 3px 3px 3px;
 }.tc-tiddler-frame .tc-tiddler-preview .tc-edit-texteditor {
 	width: 49%;
@@ -1814,7 +2077,7 @@ a.tc-tiddlylink:hover {
 	border-right: 1px solid #cccccc;
 }.tc-sidebar-lists .tc-tab-divider {
 	border-top: 1px solid #e4e4e4;
-}.tc-more-sidebar .tc-tab-buttons button {
+}.tc-more-sidebar > .tc-tab-set > .tc-tab-buttons > button {
 	display: block;
 	width: 100%;
 	background-color: #e0e0e0;
@@ -1823,9 +2086,76 @@ a.tc-tiddlylink:hover {
 	border-bottom: none;
 	border-right: 1px solid #ccc;
 	margin-bottom: inherit;
-}.tc-more-sidebar .tc-tab-buttons button.tc-tab-selected {
+}.tc-more-sidebar > .tc-tab-set > .tc-tab-buttons > button.tc-tab-selected {
 	background-color: #f4f4f4;
 	border: none;
+}/*
+** Manager
+*/.tc-manager-wrapper {
+	
+}.tc-manager-controls {
+	
+}.tc-manager-control {
+	margin: 0.5em 0;
+}.tc-manager-list {
+	width: 100%;
+	border-top: 1px solid #bbb;
+	border-left: 1px solid #bbb;
+	border-right: 1px solid #bbb;
+}.tc-manager-list-item {}.tc-manager-list-item-heading {
+    display: block;
+    width: 100%;
+    text-align: left;	
+	border-bottom: 1px solid #bbb;
+	padding: 3px;
+}.tc-manager-list-item-heading-selected {
+	font-weight: bold;
+	color: #ffffff;
+	fill: #ffffff;
+	background-color: #333333;
+}.tc-manager-list-item-heading:hover {
+	background: #5778d8;
+	color: #ffffff;
+}.tc-manager-list-item-content {
+	display: flex;
+}.tc-manager-list-item-content-sidebar {
+    flex: 1 0;
+    background: #f8f8f8;
+    border-right: 0.5em solid #bbb;
+    border-bottom: 0.5em solid #bbb;
+    white-space: nowrap;
+}.tc-manager-list-item-content-item-heading {
+	display: block;
+	width: 100%;
+	text-align: left;
+    background: #bbb;
+	text-transform: uppercase;
+	font-size: 0.6em;
+	font-weight: bold;
+    padding: 0.5em 0 0.5em 0;
+}.tc-manager-list-item-content-item-body {
+	padding: 0 0.5em 0 0.5em;
+}.tc-manager-list-item-content-item-body > pre {
+	margin: 0.5em 0 0.5em 0;
+	border: none;
+	background: inherit;
+}.tc-manager-list-item-content-tiddler {
+    flex: 3 1;
+    border-left: 0.5em solid #bbb;
+    border-right: 0.5em solid #bbb;
+    border-bottom: 0.5em solid #bbb;
+}.tc-manager-list-item-content-item-body > table {
+	border: none;
+	padding: 0;
+	margin: 0;
+}.tc-manager-list-item-content-item-body > table td {
+	border: none;
+}.tc-manager-icon-editor > button {
+	width: 100%;
+}.tc-manager-icon-editor > button > svg,
+.tc-manager-icon-editor > button > button {
+	width: 100%;
+	height: auto;
 }/*
 ** Alerts
 */.tc-alerts {
@@ -1926,6 +2256,10 @@ a.tc-tiddlylink:hover {
 	font-size: 12px;
 	line-height: 18px;
 	color: #547599;
+}.tc-message-box svg {
+	width: 1em;
+	height: 1em;
+    vertical-align: text-bottom;
 }/*
 ** Pictures
 */.tc-bordered-image {
@@ -2148,20 +2482,212 @@ a.tc-tiddlylink:hover {
 	color: #fff;
 }
 
+.tc-double-spaced-list li {
+	padding-bottom: .5em;
+	padding-top: .5em;
+}.tc-link-info-item {
+    border: 1px solid #ebefcd;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    background: #fcfdf3;
+    font-size: 0.8em;
+    line-height: 1.2;
+}.tc-link-info-item h1 {
+	font-weight: 500;
+	font-size: 16px;	
+}.tc-scrollable-demo {
+	border: 1px solid #cfd6e6;
+	background-color: #ecf2ff;
+	padding: 1em;
+	height: 400px;
+	position: relative;
+	overflow: auto;
+}.tc-improvement-banner {
+	font-size: 0.7em;
+	background: #fcc;
+	padding-left: 5px;
+	margin-top: 6px;
+	margin-bottom: 12px;
+	
+  -webkit-box-shadow: 2px 2px 2px rgba(0,0,0,0.4);
+     -moz-box-shadow: 2px 2px 2px rgba(0,0,0,0.4);
+          box-shadow: 2px 2px 2px rgba(0,0,0,0.4);
 
-.tc-subtitle {
-    text-align: right;
+}@media (max-width: 960px) {
+	
+	.tc-improvement-banner {
+	}}@media (min-width: 960px) {.tc-improvement-banner {
+		margin-right: -53px;
+		margin-left: -53px;
+	}.tc-improvement-banner:before {
+		display: block;
+		position: absolute;
+		width: 0;
+		height: 0;
+		content: " ";
+		margin-left: -5px;
+		margin-top: -10px;
+		border-top: 5px solid transparent;
+		border-left: 5px solid transparent;
+		border-right: 5px solid #C07E7E;
+		border-bottom: 5px solid #C07E7E;
+	}}.tc-improvement-banner svg {
+	width: 1em;
+	height: 1em;
+}
+
+
+.doc-def {
+	font-style: normal;
+	font-weight: bold;
+}.doc-em {
+	font-style: italic;
+	font-variant: small-caps;
+	text-decoration: none;
+}.doc-strong {
+	color: #881122;
+	font-style: normal;
+	font-weight: bold;
+}.doc-foreign {
+	font-style: italic;
+}.doc-place {
+	background-color: #ffffff;
+	border: none;
+	color: #888888;
+	font-style: normal;
+	font-weight: bold;
+}.doc-button,
+.doc-tab,
+.doc-tag,
+.doc-tiddler,
+.doc-field,
+.doc-value,
+.doc-operator,
+.doc-var,
+.doc-widget,
+.doc-attr,
+.doc-param {
+	background-color: #ffffff;
+	border: none;
+	color: #888888;
+	font-weight: bold;
+	padding: 0;
+}a .doc-place,
+a .doc-button,
+a .doc-tab,
+a .doc-tag,
+a .doc-tiddler,
+a .doc-field,
+a .doc-value,
+a .doc-operator,
+a .doc-var,
+a .doc-widget,
+a .doc-attr {
+	color: #5778d8;
+}.doc-button svg {
+	height: 1em;
+}td svg {
+	height: 1em;
+}.doc-key {
+	color: #888888;
+	font-weight: bold;
+}.doc-clink code {
+	color: #5778d8;
+}.doc-preamble {
+	border: 2px solid #e1e1e8;
+	color: #888888;
+	font-size: 90%;
+	margin-left: 0;
+	padding: 0.5em 0.7em;
+}.doc-note dt {
+	color: #888888;
+}
+.doc-note dd {
+	border-left: 2px solid #e1e1e8;
+	padding-left: 0.6em;
+}.doc-example {
+	margin: 1em 0;
+	padding: 0.8em 0;
+}
+.doc-example:hover {
+	background-color: #f7f7f9;
+}
+.doc-example ul {
+	margin-bottom: 0;
+	padding-bottom: 0;
+	margin-top: 0.2em;
+}
+.doc-example pre:first-child {
+	margin-top: 0;
+}
+.doc-example-result {
+	border-left: 5px solid #bbb;
+	border-right: 5px solid #bbb;
+	margin-left: 0;
+	margin-right: 0;
+	padding: 0 10px;
+}
+.doc-example-result ul {
+	margin-left: 0;
+	padding-left: 10px;
+}
+.doc-example-result ol {
+	margin-left: 0;
+	padding-left: 20px;
+}.doc-table th, .doc-table tr {
+	vertical-align: top;
+}
+.doc-table th a {
+	font-weight: bold;
+}tr.doc-table-subheading {
+	height: 2em;
+	vertical-align: middle;
+}.doc-table.before-tiddler-body {
+	margin-top: 2em;
+}.doc-icon-block {
+	border-left: 2px solid #e1e1e8;
+	margin-left: 3em;
+	padding-left: 0.6em;
+	position: relative;
+}
+.doc-block-icon {
+	position: absolute;
+	left: -3em;
+	top: 0.2em;
+}
+.doc-block-icon .tc-image-tip {
+	fill: #5778d8;
+}
+.doc-block-icon .tc-image-warning {
+	fill: #881122;
+}.doc-from-version {
+    display: inline-block;
+    border-radius: 1em;
+	background: #cccccc;
+	color: #ffffff;
+	fill: #ffffff;
+    padding: 0 0.4em;
+    font-size: 0.7em;
+    text-transform: uppercase;
+    font-weight: bold;
+    line-height: 1.5;
+    vertical-align: text-bottom;
+}.doc-from-version svg {
+	width: 1em;
+	height: 1em;
+    vertical-align: text-bottom;
 }
 
 
 </style>
 </head>
 <body class="tc-body">
-
+<p><div class="tc-static-alert"><div class="tc-static-alert-inner">This page is part of a static HTML representation of the TiddlyWiki at <a class="tc-tiddlylink-external" href="http://tiddlywiki.com/" rel="noopener noreferrer" target="_blank">http://tiddlywiki.com/</a></div></div>
+</p>
 <section class="tc-story-river">
 <p>
-<a name="Welcome">
-<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   "><div class="tc-tiddler-title">
+<a name="INDEX">
+<div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-AlexHough"><div class="tc-tiddler-title">
 <div class="tc-titlebar">
 <span class="tc-tiddler-controls">
 <span class=" tc-reveal"><button aria-label="more" class="tc-btn-invisible" title="More actions">
@@ -2170,7 +2696,14 @@ a.tc-tiddlylink:hover {
 </button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="edit" class="tc-btn-invisible" title="Edit this tiddler">
 
 
-</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="close" class="tc-btn-invisible" title="Close this tiddler">
+</button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><span class="tc-popup-keep">
+<button aria-label="QR code" class="tc-btn-invisible" title="Generate QR code for this tiddler">
+
+
+</button>
+</span>
+<div class=" tc-reveal" hidden="true"></div>
+</span><span class=" tc-reveal"><button aria-label="close" class="tc-btn-invisible" title="Close this tiddler">
 
 
 </button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
@@ -2185,7 +2718,7 @@ a.tc-tiddlylink:hover {
 
 
 <h2 class="tc-title">
-Welcome
+INDEX
 </h2>
 
 </span>
@@ -2195,17 +2728,39 @@ Welcome
 <div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
 </div><div class=" tc-reveal" hidden="true"></div>
 <div class=" tc-reveal">
-<div class="tc-tags-wrapper"></div>
-</div>
-<div class="tc-tiddler-body tc-reveal"><p>Welcome to my GitHub Pages!</p></div>
-<div class=" tc-reveal">
 <div class="tc-subtitle">
-<a class="tc-tiddlylink tc-tiddlylink-resolves" href="#AH">
-AH
-</a> 5th October 2016 at 12:37pm
+<a class="tc-tiddlylink tc-tiddlylink-missing" href="#">
+
+</a> 13th June 2017 at 10:54am
+</div>
+</div>
+<div class=" tc-reveal">
+<div class="tc-tags-wrapper"><span class="tc-tag-list-item">
+
+
+<span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+fill:#333333;
+color:#333333;">
+ AlexHough
+</span>
+
+<span class="tc-drop-down tc-reveal" hidden="true"></span>
+
+</span>
 </div>
 </div>
 
+
+
+
+
+
+
+<div class="tc-tiddler-body tc-reveal"><p><a class="tc-tiddlylink-external" href="https://alexhough.github.io/PickleJournal.html" rel="noopener noreferrer" target="_blank">PickleJournal</a></p>
+
+
+
+</div>
 
 
 </div>
